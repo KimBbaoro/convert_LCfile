@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, send_file,make_response
 app = Flask(__name__)
-import matplotlib.pyplot as plt
+
 import librosa, soundfile
 import librosa.display
 from werkzeug.utils import secure_filename
@@ -10,7 +10,7 @@ import io
 from pydub import AudioSegment
 
 
-plt.style.use('seaborn-white')
+
 
 @app.route('/')
 def hello_pybo():
