@@ -9,8 +9,7 @@ import os
 import io
 from pydub import AudioSegment
 
-global save_location
-global return_data
+
 plt.style.use('seaborn-white')
 
 @app.route('/')
