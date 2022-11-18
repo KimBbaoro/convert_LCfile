@@ -8,54 +8,52 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- 제목-->
-        <title>MP3 Upload Form</title>
-        <link rel="stylesheet" href="css/normalize.css">
-        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-  <body>
-  <div style="text-align:center; font-weight:bold; margin-top:30px">영어 듣기 파일을 실전과 같은 음질로 바꿔줍니다.</div>
-  <div style="text-align:center; font-weight:bold; margin-top:15px;">이제 이어폰 끼고 실전 음질을 만나보세요!</div>
 
-  </body>
-    <body>
-
-      <form id="trans" action="{{ url_for('upload')}}" method="post" enctype="multipart/form-data"
-            style = "margin-top: 40px;">
-
-        <h3 align="center">mp3나 wav 파일을 선택해주세요.</h3>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 제목-->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
 
 
-        <fieldset>
-<!--          <legend><span class="number">1</span>About The Music</legend>-->
-<!--          <label for="name">Title:</label>-->
-<!--          <input type="text" id="title" name="music_title">-->
-
-<!--          <label for="mail">Singer:</label>-->
-<!--          <input type="text" id="singer" name="singer_name">-->
-
-<!--          <label for="description">First few lines:</label>-->
-<!--          <textarea id="description" name="description"></textarea>-->
-
-          <label for="file">File:</label>
-          <input type="file" id="lc" name="lc" accept=".wav,.mp3" required>
-<div id="loading" style="text-align:center";>
-    <div class="loader" style="text-align:center"></div>
-    <p>다운로드까지 3~5분 걸립니다.</p>
-    <p>스피너가 돌아도 다운로드 여부만 신경 써주세요! </p>
+<div style="text-align:center; font-weight:bold; margin-top:30px">영어 듣기 파일을 실전과 같은 음질로 바꿔줍니다.</div>
+<div style="text-align:center; font-weight:bold; margin-top:15px;">이제 이어폰 끼고 실전 음질을 만나보세요!</div>
 
 
 
-</div>
-        </fieldset>
-        <button id="btn" type="submit" onclick="readURL()">Convert</button>
-      </form>
 
-    </body>
+<form id="trans" action="{{ url_for('upload')}}" method="post" enctype="multipart/form-data"
+      style="margin-top: 40px;">
+
+    <h3 align="center">mp3나 wav 파일을 선택해주세요.</h3>
+
+
+    <fieldset>
+        <!--          <legend><span class="number">1</span>About The Music</legend>-->
+        <!--          <label for="name">Title:</label>-->
+        <!--          <input type="text" id="title" name="music_title">-->
+
+        <!--          <label for="mail">Singer:</label>-->
+        <!--          <input type="text" id="singer" name="singer_name">-->
+
+        <!--          <label for="description">First few lines:</label>-->
+        <!--          <textarea id="description" name="description"></textarea>-->
+
+        <label>File:</label>
+        <input type="file" id="lc" name="lc" accept=".wav,.mp3" required>
+        <div id="loading" style="text-align:center">
+            <div class="loader" style="text-align:center"></div>
+            <p>변환까지 3~5분 걸립니다.</p>
+            <p>변환 후에 다운로드 페이지로 넘어갑니다.</p>
+
+
+        </div>
+    </fieldset>
+    <button id="btn" type="submit" onclick="readURL()">Convert</button>
+</form>
+
+
 </body>
 
 </html>
@@ -84,6 +82,7 @@ window.addEventListener('beforeunload', (event) => {
   event.preventDefault();
   event.returnValue = 'flag';
 });
+
 
 
 </script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>소리 변환 프로그램</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+
+<fieldset>
+
+    <form name="hiddenForm" method="post" action="{{ url_for('download') }}">
+        <div style="text-align:center; font-weight:bold; margin-top:25px">변환이 완료되었습니다.</div>
+        <div style="text-align:center; font-weight:bold; margin-top:10px; margin-bottom:25px">download 버튼을 눌러주세요.</div>
+        <input type="hidden" name="save_location" value="{{ save_location }}"/>
+        <button id="btn" type="submit" onclick="readURL()">download</button>
+        <!--          <legend><span class="number">1</span>About The Music</legend>-->
+        <!--          <label for="name">Title:</label>-->
+        <!--          <input type="text" id="title" name="music_title">-->
+
+        <!--          <label for="mail">Singer:</label>-->
+        <!--          <input type="text" id="singer" name="singer_name">-->
+
+        <!--          <label for="description">First few lines:</label>-->
+        <!--          <textarea id="description" name="description"></textarea>-->
+    </form>
+</fieldset>
+
+
+</html>
