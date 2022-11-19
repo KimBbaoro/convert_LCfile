@@ -22,7 +22,7 @@ def upload():
         audio_data = request.files["lc"]
         if audio_data:
             filename = secure_filename(audio_data.filename)
-            src = f"pybo/static/sound/{filename}"
+            src = f"mysite/pybo/static/sound/{filename}"
             audio_data.save(src)
             stem, fileExtension = os.path.splitext(filename)
             if fileExtension == '.mp3':
