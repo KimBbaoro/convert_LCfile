@@ -59,3 +59,4 @@ def create_app():
 
         os.remove(save_location)
         return send_file(return_data, as_attachment=True, download_name='converted_file.wav')
+    return app
