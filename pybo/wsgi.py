@@ -1,4 +1,4 @@
-from __init__ import app
+
 
 def hello(name):
     print(f"Hi, {name}")
@@ -15,7 +15,7 @@ def hello(name):
 
 if __name__ == '__main__':
 
-    app.run()
+    print("hello")
 
     # audio_data = request.files["lc"]
     # #print(type(audio_data))
