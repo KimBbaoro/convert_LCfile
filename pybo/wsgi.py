@@ -1,11 +1,4 @@
-import matplotlib.pyplot as plt
-import librosa
-import librosa.display
-import torch
-import IPython.display as ipd
-from flask import request
-plt.style.use('seaborn-white')
-import wave
+from __init__ import app
 
 def hello(name):
     print(f"Hi, {name}")
@@ -22,7 +15,7 @@ def hello(name):
 
 if __name__ == '__main__':
 
-    print('start')
+    app.run()
 
     # audio_data = request.files["lc"]
     # #print(type(audio_data))
