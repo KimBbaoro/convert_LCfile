@@ -22,14 +22,14 @@ def upload():
         audio_data = request.files["lc"]
         if audio_data:
             filename = secure_filename(audio_data.filename)
-            src = f"mysite/pybo/static/sound/{filename}"
+            src = f"pybo/sound/{filename}"
             audio_data.save(src)
             stem, fileExtension = os.path.splitext(filename)
             if fileExtension == '.mp3':
                 audSeg = AudioSegment.from_mp3(src)
                 ##
                 os.remove(src)
-                src = f"pybo/static/sound/{stem}" + '.wav'
+                src = f"pybo/sound/{stem}" + '.wav'
                 audSeg.export(src, format="wav")
 
             sr = librosa.get_samplerate(src)
@@ -38,7 +38,7 @@ def upload():
             new_filename = new_filename.replace(':', "_")
             os.remove(src)
 
-            save_location = f'pybo\static\output\{new_filename}'
+            save_location = f'pybo/output/{new_filename}'
 
             soundfile.write(save_location, audio_data, sr, format='WAV')
 
